@@ -1,0 +1,82 @@
+﻿
+<html >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    @*<meta name="viewport" content="width=device-width, initial-scale=1.0">*@
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    @Styles.Render("~/Content/css")
+    <title>SistRE-G2</title>
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css">
+    @Scripts.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .navbar-success {
+            background-color: darkgreen;
+        }
+
+        .bg-success {
+            background-color: darkgreen;
+        }
+
+        .navbar-success ul li a {
+            color: white;
+        }
+
+        .bg-darkgreen {
+            background-color: darkgreen;
+            color: white;
+        }
+        .body-content{
+            min-height:92%;
+        }
+        footer {
+            width: auto;
+            height: 8%;
+            margin: 0 auto;
+        }     
+    </style>
+
+</head>
+<body class="hold-transition sidebar-mini layout-fixed" >
+    @*<body id="page-top">*@
+
+    @*<div class="container body-content" style="width:auto">*@
+    @Html.Partial("_Navigation")
+    <div class="body-content">
+        @RenderBody()
+    </div>
+    @Html.Partial("_Footer")
+    @*</div>*@
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"></script>
+
+
+    @RenderSection("scripts", required: false)
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+</body>
+</html>
+
+    <script>
+
+        $(".data-table").dataTable();
+
+        //$(document).ready(function () {
+        //    $('#crt').click(function () {
+        //        alert('Click en el boton');
+        //    });
+
+        //    $('#crt').click();
+        //});
+</script>
+
+
+
+

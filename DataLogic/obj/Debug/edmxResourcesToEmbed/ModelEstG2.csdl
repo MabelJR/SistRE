@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EstG2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EstG2Contex" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CausaHerida" EntityType="EstG2Model.CausaHerida" />
+    <EntitySet Name="CausaMuerte" EntityType="EstG2Model.CausaMuerte" />
+    <EntitySet Name="Estatus" EntityType="EstG2Model.Estatus" />
+    <AssociationSet Name="FK_CausaHerida_Estatus" Association="EstG2Model.FK_CausaHerida_Estatus">
+      <End Role="Estatus" EntitySet="Estatus" />
+      <End Role="CausaHerida" EntitySet="CausaHerida" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CausaMuerte_Estatus" Association="EstG2Model.FK_CausaMuerte_Estatus">
+      <End Role="Estatus" EntitySet="Estatus" />
+      <End Role="CausaMuerte" EntitySet="CausaMuerte" />
+    </AssociationSet>
+    <EntitySet Name="TipoNovedad" EntityType="EstG2Model.TipoNovedad" />
+    <AssociationSet Name="FK_Tipo_Novedad_Estatus1" Association="EstG2Model.FK_Tipo_Novedad_Estatus1">
+      <End Role="Estatus" EntitySet="Estatus" />
+      <End Role="TipoNovedad" EntitySet="TipoNovedad" />
+    </AssociationSet>
+    <EntitySet Name="TipoDroga" EntityType="EstG2Model.TipoDroga" />
+  </EntityContainer>
+  <EntityType Name="CausaHerida">
+    <Key>
+      <PropertyRef Name="CausaHeridaID" />
+    </Key>
+    <Property Name="CausaHeridaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreo" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioActualizo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaActualizo" Type="DateTime" Precision="3" />
+    <Property Name="EstatusID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Estatus" Relationship="EstG2Model.FK_CausaHerida_Estatus" FromRole="CausaHerida" ToRole="Estatus" />
+  </EntityType>
+  <EntityType Name="CausaMuerte">
+    <Key>
+      <PropertyRef Name="CausaMuerteID" />
+    </Key>
+    <Property Name="CausaMuerteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="EstatusID" Type="Int32" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FechaCreo" Type="DateTime" Precision="3" Nullable="false" />
+    <Property Name="UsuarioActualizo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FechaActualizo" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Estatus" Relationship="EstG2Model.FK_CausaMuerte_Estatus" FromRole="CausaMuerte" ToRole="Estatus" />
+  </EntityType>
+  <EntityType Name="Estatus">
+    <Key>
+      <PropertyRef Name="EstatusID" />
+    </Key>
+    <Property Name="EstatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CausaHerida" Relationship="EstG2Model.FK_CausaHerida_Estatus" FromRole="Estatus" ToRole="CausaHerida" />
+    <NavigationProperty Name="CausaMuerte" Relationship="EstG2Model.FK_CausaMuerte_Estatus" FromRole="Estatus" ToRole="CausaMuerte" />
+    <NavigationProperty Name="TipoNovedad" Relationship="EstG2Model.FK_Tipo_Novedad_Estatus1" FromRole="Estatus" ToRole="TipoNovedad" />
+  </EntityType>
+  <Association Name="FK_CausaHerida_Estatus">
+    <End Type="EstG2Model.Estatus" Role="Estatus" Multiplicity="1" />
+    <End Type="EstG2Model.CausaHerida" Role="CausaHerida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estatus">
+        <PropertyRef Name="EstatusID" />
+      </Principal>
+      <Dependent Role="CausaHerida">
+        <PropertyRef Name="EstatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CausaMuerte_Estatus">
+    <End Type="EstG2Model.Estatus" Role="Estatus" Multiplicity="1" />
+    <End Type="EstG2Model.CausaMuerte" Role="CausaMuerte" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estatus">
+        <PropertyRef Name="EstatusID" />
+      </Principal>
+      <Dependent Role="CausaMuerte">
+        <PropertyRef Name="EstatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TipoNovedad">
+    <Key>
+      <PropertyRef Name="TipoNovedadID" />
+    </Key>
+    <Property Name="TipoNovedadID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreo" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioActualizo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaActualizo" Type="DateTime" Precision="3" />
+    <Property Name="EstatusID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Estatus" Relationship="EstG2Model.FK_Tipo_Novedad_Estatus1" FromRole="TipoNovedad" ToRole="Estatus" />
+  </EntityType>
+  <Association Name="FK_Tipo_Novedad_Estatus1">
+    <End Type="EstG2Model.Estatus" Role="Estatus" Multiplicity="1" />
+    <End Type="EstG2Model.TipoNovedad" Role="TipoNovedad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estatus">
+        <PropertyRef Name="EstatusID" />
+      </Principal>
+      <Dependent Role="TipoNovedad">
+        <PropertyRef Name="EstatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TipoDroga">
+    <Key>
+      <PropertyRef Name="TipoDrogaID" />
+    </Key>
+    <Property Name="TipoDrogaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="EstatusID" Type="Int32" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreo" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UsuarioActualizo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaActualizo" Type="DateTime" Precision="3" />
+    <Property Name="TipoNovedadID" Type="Int32" />
+  </EntityType>
+</Schema>

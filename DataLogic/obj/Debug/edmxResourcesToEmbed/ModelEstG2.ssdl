@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EstG2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CausaHerida">
+    <Key>
+      <PropertyRef Name="CausaHeridaID" />
+    </Key>
+    <Property Name="CausaHeridaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="50" />
+    <Property Name="FechaCreo" Type="datetime" />
+    <Property Name="UsuarioActualizo" Type="varchar" MaxLength="50" />
+    <Property Name="FechaActualizo" Type="datetime" />
+    <Property Name="EstatusID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CausaMuerte">
+    <Key>
+      <PropertyRef Name="CausaMuerteID" />
+    </Key>
+    <Property Name="CausaMuerteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="EstatusID" Type="int" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaCreo" Type="datetime" Nullable="false" />
+    <Property Name="UsuarioActualizo" Type="nvarchar" MaxLength="50" />
+    <Property Name="FechaActualizo" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Estatus">
+    <Key>
+      <PropertyRef Name="EstatusID" />
+    </Key>
+    <Property Name="EstatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoDroga">
+    <Key>
+      <PropertyRef Name="TipoDrogaID" />
+    </Key>
+    <Property Name="TipoDrogaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="EstatusID" Type="int" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaCreo" Type="datetime" Nullable="false" />
+    <Property Name="UsuarioActualizo" Type="varchar" MaxLength="50" />
+    <Property Name="FechaActualizo" Type="datetime" />
+    <Property Name="TipoNovedadID" Type="int" />
+  </EntityType>
+  <EntityType Name="TipoNovedad">
+    <Key>
+      <PropertyRef Name="TipoNovedadID" />
+    </Key>
+    <Property Name="TipoNovedadID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="50" />
+    <Property Name="FechaCreo" Type="datetime" />
+    <Property Name="UsuarioActualizo" Type="varchar" MaxLength="50" />
+    <Property Name="FechaActualizo" Type="datetime" />
+    <Property Name="EstatusID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CausaHerida_Estatus">
+    <End Role="Estatus" Type="Self.Estatus" Multiplicity="1" />
+    <End Role="CausaHerida" Type="Self.CausaHerida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estatus">
+        <PropertyRef Name="EstatusID" />
+      </Principal>
+      <Dependent Role="CausaHerida">
+        <PropertyRef Name="EstatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CausaMuerte_Estatus">
+    <End Role="Estatus" Type="Self.Estatus" Multiplicity="1" />
+    <End Role="CausaMuerte" Type="Self.CausaMuerte" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estatus">
+        <PropertyRef Name="EstatusID" />
+      </Principal>
+      <Dependent Role="CausaMuerte">
+        <PropertyRef Name="EstatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tipo_Novedad_Estatus">
+    <End Role="Estatus" Type="Self.Estatus" Multiplicity="1" />
+    <End Role="TipoNovedad" Type="Self.TipoNovedad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estatus">
+        <PropertyRef Name="EstatusID" />
+      </Principal>
+      <Dependent Role="TipoNovedad">
+        <PropertyRef Name="EstatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EstG2ModelStoreContainer">
+    <EntitySet Name="CausaHerida" EntityType="Self.CausaHerida" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CausaMuerte" EntityType="Self.CausaMuerte" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estatus" EntityType="Self.Estatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoDroga" EntityType="Self.TipoDroga" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoNovedad" EntityType="Self.TipoNovedad" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CausaHerida_Estatus" Association="Self.FK_CausaHerida_Estatus">
+      <End Role="Estatus" EntitySet="Estatus" />
+      <End Role="CausaHerida" EntitySet="CausaHerida" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CausaMuerte_Estatus" Association="Self.FK_CausaMuerte_Estatus">
+      <End Role="Estatus" EntitySet="Estatus" />
+      <End Role="CausaMuerte" EntitySet="CausaMuerte" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tipo_Novedad_Estatus" Association="Self.FK_Tipo_Novedad_Estatus">
+      <End Role="Estatus" EntitySet="Estatus" />
+      <End Role="TipoNovedad" EntitySet="TipoNovedad" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
