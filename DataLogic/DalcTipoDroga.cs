@@ -9,6 +9,7 @@ namespace DataLogic
 {
    public class DalcTipoDroga
     {
+        //Probando GitHub
         public List<BeTipoDroga> FindAll()
         {
             var data = new List<BeTipoDroga>();
