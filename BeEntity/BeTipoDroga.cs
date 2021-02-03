@@ -21,14 +21,15 @@ namespace BeEntity
         [DisplayName("Usuario Creó")]
         public string UsuarioCreo { get; set; }
 
+        [Display(Name = "Fecha de creacion")]
         [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
-        [Required(ErrorMessage = "{0} no puede estar vacio")]
-        [DisplayName("Fecha Creó")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = false)] //Formato Fecha ano/mes/dia
         public Nullable<System.DateTime> FechaCreo { get; set; }
         public string UsuarioActualizo { get; set; }
 
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
+        [Display(Name = "Fecha de actualizacion")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = false)] //Formato Fecha ano/mes/dia
         public Nullable<System.DateTime> FechaActualizo { get; set; }
 
         [DisplayName("Estatus")]
