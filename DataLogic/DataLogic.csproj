@@ -58,6 +58,7 @@
     </Compile>
     <Compile Include="DalcCausaHerida.cs" />
     <Compile Include="DalcEstatus.cs" />
+    <Compile Include="DalcTipoApresamientos.cs" />
     <Compile Include="DalcTipoDroga.cs" />
     <Compile Include="DalcTipoNovedad.cs" />
     <Compile Include="Estatus.cs">
@@ -79,6 +80,9 @@
       <DependentUpon>ModelEstG2.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TipoApresamientos.cs">
+      <DependentUpon>ModelEstG2.tt</DependentUpon>
+    </Compile>
     <Compile Include="TipoDroga.cs">
       <DependentUpon>ModelEstG2.tt</DependentUpon>
     </Compile>

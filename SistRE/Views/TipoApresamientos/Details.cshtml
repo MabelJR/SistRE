@@ -1,0 +1,75 @@
+﻿@model DataLogic.TipoApresamientos
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TipoApresamientos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioCreo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioCreo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCreo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCreo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioActualizo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioActualizo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaActualizo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaActualizo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstatusID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstatusID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoNovedadID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoNovedadID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ApresamientoID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

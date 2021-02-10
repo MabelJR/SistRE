@@ -18,6 +18,7 @@
       <End Role="TipoNovedad" EntitySet="TipoNovedad" />
     </AssociationSet>
     <EntitySet Name="TipoDroga" EntityType="EstG2Model.TipoDroga" />
+    <EntitySet Name="TipoApresamientos" EntityType="EstG2Model.TipoApresamientos" />
   </EntityContainer>
   <EntityType Name="CausaHerida">
     <Key>
@@ -115,6 +116,19 @@
     <Property Name="FechaCreo" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="UsuarioActualizo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="FechaActualizo" Type="DateTime" Precision="3" />
+    <Property Name="TipoNovedadID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TipoApresamientos">
+    <Key>
+      <PropertyRef Name="ApresamientoID" />
+    </Key>
+    <Property Name="ApresamientoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreo" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioActualizo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaActualizo" Type="DateTime" Precision="3" />
+    <Property Name="EstatusID" Type="Int32" />
     <Property Name="TipoNovedadID" Type="Int32" />
   </EntityType>
 </Schema>

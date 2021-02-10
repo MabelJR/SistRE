@@ -57,7 +57,8 @@ namespace DataLogic
             {
                 using (var db = new EstG2Contex())
                 {
-                    data.AddRange(from tn in db.TipoDroga.Where(t => t.TipoDrogaID == id)
+                    data.AddRange(from tn in db.TipoDroga
+                                  .Where(t => t.TipoDrogaID == id)
                                   select new BeTipoDroga()
 
                                   {
