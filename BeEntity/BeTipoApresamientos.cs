@@ -10,7 +10,7 @@ namespace BeEntity
 {
     public class BeTipoApresamientos
     {
-        public int ApresamientoID { get; set; }
+        public int ID { get; set; }
         [Required(ErrorMessage = "{0} no puede estar vacio")]
         [DisplayName("Tipo de apresamiento")]
         public string Nombre { get; set; }

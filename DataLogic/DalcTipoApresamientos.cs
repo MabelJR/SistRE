@@ -20,13 +20,14 @@ namespace DataLogic
                                   where tn.EstatusID != 3
                                   select new BeTipoApresamientos()
                                   {
-                                     ApresamientoID = tn.ApresamientoID,
+                                     ID = tn.ApresamientoID,
                                      Nombre = tn.Nombre,
                                      UsuarioCreo = tn.UsuarioCreo,
                                      FechaCreo = tn.FechaCreo,
                                      UsuarioActualizo = tn.UsuarioActualizo,
                                      FechaActualizo = tn.FechaActualizo,
-                                     TipoNovedadID = tn.TipoNovedadID
+                                     TipoNovedadID = tn.TipoNovedadID,
+                                     EstatusID = tn.EstatusID
                                   }); return data.ToList();
                 }
             }
@@ -49,7 +50,7 @@ namespace DataLogic
                                   .Where(t => t.ApresamientoID == id)
                                   select new BeTipoApresamientos()
                                   {
-                                      ApresamientoID = tn.ApresamientoID,
+                                      ID = tn.ApresamientoID,
                                       Nombre = tn.Nombre,
                                       UsuarioCreo = tn.UsuarioCreo,
                                       FechaCreo = tn.FechaCreo,
@@ -99,7 +100,7 @@ namespace DataLogic
                     tn.UsuarioActualizo = "MJimenez";
                     tn.FechaActualizo = DateTime.Now;
                     tn.Nombre = item.Nombre;
-                    tn.ApresamientoID = item.ApresamientoID;
+                    tn.ApresamientoID = item.ID;
                     tn.EstatusID = item.EstatusID;
                     db.TipoApresamientos.Attach(tn);
                     db.Entry(tn).Property(x => x.Nombre).IsModified = true;

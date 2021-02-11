@@ -1,96 +1,63 @@
-﻿
-@model BeEntity.BeTipoApresamientos
+﻿@model IEnumerable<BeEntity.BeTipoApresamientos>
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <div class="panel panel-body" id="container" style="width:unset">
     <div class="panel-heading" style="text-align:center">
         <br />
-        <h4><strong> Detalle Tipos de Apresamientos </strong></h4>
+        <h4 class="fa fa-list"><strong> Tipo de apresamientos </strong></h4>
     </div>
     <hr />
     <div class="container body-content">
         <div>
-            @using (Html.BeginForm())
-            {
-                <div>
-                    @Html.Partial("OptionsBox/Edit_Back", Model.ApresamientoID)
-                </div>
-                <br />
-                <br />
-                @Html.AntiForgeryToken()
-
-                <dl class="dl-horizontal">
-                    <dt>
+            @Html.Partial("OptionsBox/Add")
+        </div>
+        <br />
+        <br />
+        <table class="table data-table">
+            <thead>
+                <tr>
+                    <th>
                         @Html.DisplayNameFor(model => model.Nombre)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Nombre)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.UsuarioCreo)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.UsuarioCreo)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.FechaCreo)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.FechaCreo)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.UsuarioActualizo)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.UsuarioActualizo)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.FechaActualizo)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.FechaActualizo)
-                    </dd>
-
-                    <dt>
+                    </th>
+                    <th>
                         @Html.DisplayNameFor(model => model.EstatusID)
-                    </dt>
-
-                    <dd>
-                        @if (Model.EstatusID == 1)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @if (item.EstatusID == 1)
                         {
                             <span>Activo</span>
                         }
-                        else if (Model.EstatusID == 2)
+                        else if (item.EstatusID == 2)
                         {
-                            <span>Inactivo</span>
-
+                            <span>Inactvo</span>
                         }
                         else
                         {
                             <span>Eliminado</span>
+
                         }
 
-                    </dd>
+                    </td>
 
-                </dl>
-            }
-        </div>
-    </div>
+                    <td>
+                        @Html.Partial("OptionsBox/Edit_Details", item.ID)
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+       </div>
 </div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
