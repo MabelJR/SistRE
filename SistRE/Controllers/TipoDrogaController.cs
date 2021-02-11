@@ -15,7 +15,7 @@ namespace Sist_G2ERD.Controllers
     public class TipoDrogaController : Controller
     {
         #region variables
-        //Testing connection to GitHub
+        //
         private BcTipoDroga BcTipoNoveda = new BcTipoDroga();
         BcEstatus BcEstatus = new BcEstatus();
 
