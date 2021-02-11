@@ -44,6 +44,7 @@
     <Compile Include="BcCausaHerida.cs" />
     <Compile Include="BcEstatus.cs" />
     <Compile Include="BcTipoApresamientos.cs" />
+    <Compile Include="BcTipoContrabando.cs" />
     <Compile Include="BcTipoDroga.cs" />
     <Compile Include="BcTipoNovedad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

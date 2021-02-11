@@ -134,6 +134,7 @@
     <Compile Include="Controllers\EstatusController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TipoApresamientosController.cs" />
+    <Compile Include="Controllers\TipoContrabandoController.cs" />
     <Compile Include="Controllers\TipoDrogaController.cs" />
     <Compile Include="Controllers\TipoNovedadController.cs" />
     <Compile Include="Global.asax.cs">
@@ -818,6 +819,10 @@
     <Content Include="Views\TipoApresamientos\Details.cshtml" />
     <Content Include="Views\TipoApresamientos\Index.cshtml" />
     <Content Include="Views\TipoApresamientos\Edit.cshtml" />
+    <Content Include="Views\TipoContrabando\Create.cshtml" />
+    <Content Include="Views\TipoContrabando\Details.cshtml" />
+    <Content Include="Views\TipoContrabando\Edit.cshtml" />
+    <Content Include="Views\TipoContrabando\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

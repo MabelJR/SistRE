@@ -45,6 +45,7 @@
     <Compile Include="BeCausaHerida.cs" />
     <Compile Include="BeEstatus.cs" />
     <Compile Include="BeTipoApresamientos.cs" />
+    <Compile Include="BeTipoContrabando.cs" />
     <Compile Include="BeTipoDroga.cs" />
     <Compile Include="BeTipoNovedad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
