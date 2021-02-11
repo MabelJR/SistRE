@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BcCausaHerida.cs" />
     <Compile Include="BcEstatus.cs" />
+    <Compile Include="BcPerdidaDocumentos.cs" />
     <Compile Include="BcTipoApresamientos.cs" />
     <Compile Include="BcTipoContrabando.cs" />
     <Compile Include="BcTipoDroga.cs" />

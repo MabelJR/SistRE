@@ -90,5 +90,19 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="PerdidaDocumentos">
+      <EntityTypeMapping TypeName="EstG2Model.PerdidaDocumentos">
+        <MappingFragment StoreEntitySet="PerdidaDocumentos">
+          <ScalarProperty Name="TipoNovedadID" ColumnName="TipoNovedadID" />
+          <ScalarProperty Name="EstatusID" ColumnName="EstatusID" />
+          <ScalarProperty Name="FechaActualizo" ColumnName="FechaActualizo" />
+          <ScalarProperty Name="UsuarioActualizo" ColumnName="UsuarioActualizo" />
+          <ScalarProperty Name="FechaCreo" ColumnName="FechaCreo" />
+          <ScalarProperty Name="UsuarioCreo" ColumnName="UsuarioCreo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="PerdidaDocumentosID" ColumnName="PerdidaDocumentosID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -58,6 +58,7 @@
     </Compile>
     <Compile Include="DalcCausaHerida.cs" />
     <Compile Include="DalcEstatus.cs" />
+    <Compile Include="DalcPerdidaDocumentos.cs" />
     <Compile Include="DalcTipoApresamientos.cs" />
     <Compile Include="DalcTipoContrabando.cs" />
     <Compile Include="DalcTipoDroga.cs" />
@@ -79,6 +80,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelEstG2.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PerdidaDocumentos.cs">
+      <DependentUpon>ModelEstG2.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TipoApresamientos.cs">

@@ -133,6 +133,7 @@
     <Compile Include="Controllers\CausaHeridaController.cs" />
     <Compile Include="Controllers\EstatusController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PerdidaDocumentosController.cs" />
     <Compile Include="Controllers\TipoApresamientosController.cs" />
     <Compile Include="Controllers\TipoContrabandoController.cs" />
     <Compile Include="Controllers\TipoDrogaController.cs" />
@@ -618,6 +619,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\PerdidaDocumentos\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -36,6 +36,19 @@
           <Property Name="EstatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="PerdidaDocumentos">
+          <Key>
+            <PropertyRef Name="PerdidaDocumentosID" />
+          </Key>
+          <Property Name="PerdidaDocumentosID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UsuarioCreo" Type="varchar" MaxLength="50" />
+          <Property Name="FechaCreo" Type="datetime" />
+          <Property Name="UsuarioActualizo" Type="varchar" MaxLength="50" />
+          <Property Name="FechaActualizo" Type="datetime" />
+          <Property Name="EstatusID" Type="int" />
+          <Property Name="TipoNovedadID" Type="int" />
+        </EntityType>
         <EntityType Name="TipoApresamientos">
           <Key>
             <PropertyRef Name="ApresamientoID" />
@@ -127,6 +140,7 @@
           <EntitySet Name="CausaHerida" EntityType="Self.CausaHerida" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CausaMuerte" EntityType="Self.CausaMuerte" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Estatus" EntityType="Self.Estatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PerdidaDocumentos" EntityType="Self.PerdidaDocumentos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoApresamientos" EntityType="Self.TipoApresamientos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoContrabando" EntityType="Self.TipoContrabando" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoDroga" EntityType="Self.TipoDroga" Schema="dbo" store:Type="Tables" />
@@ -168,6 +182,7 @@
           <EntitySet Name="TipoDroga" EntityType="EstG2Model.TipoDroga" />
           <EntitySet Name="TipoApresamientos" EntityType="EstG2Model.TipoApresamientos" />
           <EntitySet Name="TipoContrabando" EntityType="EstG2Model.TipoContrabando" />
+          <EntitySet Name="PerdidaDocumentos" EntityType="EstG2Model.PerdidaDocumentos" />
         </EntityContainer>
         <EntityType Name="CausaHerida">
           <Key>
@@ -293,6 +308,19 @@
           <Property Name="EstatusID" Type="Int32" />
           <Property Name="TipoNovedadID" Type="Int32" />
         </EntityType>
+        <EntityType Name="PerdidaDocumentos">
+          <Key>
+            <PropertyRef Name="PerdidaDocumentosID" />
+          </Key>
+          <Property Name="PerdidaDocumentosID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UsuarioCreo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaCreo" Type="DateTime" Precision="3" />
+          <Property Name="UsuarioActualizo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaActualizo" Type="DateTime" Precision="3" />
+          <Property Name="EstatusID" Type="Int32" />
+          <Property Name="TipoNovedadID" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -385,6 +413,20 @@
                 <ScalarProperty Name="UsuarioCreo" ColumnName="UsuarioCreo" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="ContrabandoID" ColumnName="ContrabandoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PerdidaDocumentos">
+            <EntityTypeMapping TypeName="EstG2Model.PerdidaDocumentos">
+              <MappingFragment StoreEntitySet="PerdidaDocumentos">
+                <ScalarProperty Name="TipoNovedadID" ColumnName="TipoNovedadID" />
+                <ScalarProperty Name="EstatusID" ColumnName="EstatusID" />
+                <ScalarProperty Name="FechaActualizo" ColumnName="FechaActualizo" />
+                <ScalarProperty Name="UsuarioActualizo" ColumnName="UsuarioActualizo" />
+                <ScalarProperty Name="FechaCreo" ColumnName="FechaCreo" />
+                <ScalarProperty Name="UsuarioCreo" ColumnName="UsuarioCreo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PerdidaDocumentosID" ColumnName="PerdidaDocumentosID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

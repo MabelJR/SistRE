@@ -15,6 +15,7 @@
         <EntityTypeShape EntityType="EstG2Model.TipoDroga" Width="1.5" PointX="4.625" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="EstG2Model.TipoApresamientos" Width="1.5" PointX="7.25" PointY="1.75" />
         <EntityTypeShape EntityType="EstG2Model.TipoContrabando" Width="1.5" PointX="5.375" PointY="5.75" />
+        <EntityTypeShape EntityType="EstG2Model.PerdidaDocumentos" Width="1.5" PointX="9.625" PointY="4" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

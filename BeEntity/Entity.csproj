@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="BeCausaHerida.cs" />
     <Compile Include="BeEstatus.cs" />
+    <Compile Include="BePerdidaDocumentos.cs" />
     <Compile Include="BeTipoApresamientos.cs" />
     <Compile Include="BeTipoContrabando.cs" />
     <Compile Include="BeTipoDroga.cs" />

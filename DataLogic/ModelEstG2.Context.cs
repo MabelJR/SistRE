@@ -32,5 +32,6 @@ namespace DataLogic
         public virtual DbSet<TipoDroga> TipoDroga { get; set; }
         public virtual DbSet<TipoApresamientos> TipoApresamientos { get; set; }
         public virtual DbSet<TipoContrabando> TipoContrabando { get; set; }
+        public virtual DbSet<PerdidaDocumentos> PerdidaDocumentos { get; set; }
     }
 }
