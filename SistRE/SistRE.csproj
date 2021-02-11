@@ -815,10 +815,9 @@
     <Content Include="Views\TipoDroga\Edit.cshtml" />
     <Content Include="Views\TipoDroga\Index.cshtml" />
     <Content Include="Views\TipoApresamientos\Create.cshtml" />
-    <Content Include="Views\TipoApresamientos\Delete.cshtml" />
     <Content Include="Views\TipoApresamientos\Details.cshtml" />
-    <Content Include="Views\TipoApresamientos\Edit.cshtml" />
     <Content Include="Views\TipoApresamientos\Index.cshtml" />
+    <Content Include="Views\TipoApresamientos\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

@@ -121,10 +121,12 @@ namespace Sist_G2ERD.Controllers
             try
             {
                 var tipoApresamiento = _BcTipoApresamientos.Find(id);
+                AllEstados();
                 if (tipoApresamiento == null)
                 {
                     return HttpNotFound();
-                } return View(tipoApresamiento);
+                } 
+                return View(tipoApresamiento);
             }
             catch (Exception ex)
             {
@@ -134,6 +136,7 @@ namespace Sist_G2ERD.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit (BeTipoApresamientos item)
         {
             if (item == null)
@@ -143,7 +146,7 @@ namespace Sist_G2ERD.Controllers
             try
             {
                 _BcTipoApresamientos.Edit(item);
-                return View("Index");
+                return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
@@ -151,8 +154,6 @@ namespace Sist_G2ERD.Controllers
                 throw new Exception (ex.Message);
             }
         }
-
-        
 
     }
 }

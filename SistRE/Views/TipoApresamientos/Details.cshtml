@@ -1,75 +1,95 @@
-﻿@model DataLogic.TipoApresamientos
+﻿@model BeEntity.BeTipoApresamientos
 
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>TipoApresamientos</h4>
+<div class="panel panel-body" id="container" style="width:unset">
+    <div class="panel-heading" style="text-align:center">
+        <br />
+        <h4><strong> Detalle Tipo Droga </strong></h4>
+    </div>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
+    <div class="container body-content">
+        <div>
+            @using (Html.BeginForm())
+            {
+                <div>
+                    @Html.Partial("OptionsBox/Edit_Back", Model.ID)
+                </div>
+                <br />
+                <br />
+                @Html.AntiForgeryToken()
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UsuarioCreo)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Nombre)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.UsuarioCreo)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.UsuarioCreo)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FechaCreo)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.UsuarioCreo)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.FechaCreo)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.FechaCreo)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UsuarioActualizo)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.FechaCreo)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.UsuarioActualizo)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.UsuarioActualizo)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FechaActualizo)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.UsuarioActualizo)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.FechaActualizo)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.FechaActualizo)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EstatusID)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.FechaActualizo)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.EstatusID)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.EstatusID)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TipoNovedadID)
-        </dt>
+                    <dd>
+                        @if (Model.EstatusID == 1)
+                        {
+                            <span>Activo</span>
+                        }
+                        else if (Model.EstatusID == 2)
+                        {
+                            <span>Inactivo</span>
 
-        <dd>
-            @Html.DisplayFor(model => model.TipoNovedadID)
-        </dd>
+                        }
+                        else
+                        {
+                            <span>Eliminado</span>
+                        }
 
-    </dl>
+                    </dd>
+
+                </dl>
+            }
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ApresamientoID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
