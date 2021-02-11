@@ -14,4 +14,3 @@ C:\Users\Mabel\OneDrive\Documentos\SistRE\BeEntity\bin\Debug\BeEntity.pdb
 C:\Users\Mabel\OneDrive\Documentos\SistRE\BeEntity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
 C:\Users\Mabel\OneDrive\Documentos\SistRE\BeEntity\obj\Debug\BeEntity.dll
 C:\Users\Mabel\OneDrive\Documentos\SistRE\BeEntity\obj\Debug\BeEntity.pdb
-C:\Users\Mabel\OneDrive\Documentos\SistRE\BeEntity\obj\Debug\Entity.csprojAssemblyReference.cache
