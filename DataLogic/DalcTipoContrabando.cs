@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BeEntity;
-
+// Prueba para mostrarle a Geu --------------------------------------
 namespace DataLogic
 {
    public class DalcTipoContrabando
     {
-
+        
         public List<BeTipoContrabando> FindAll()
         {
             var data = new List<BeTipoContrabando>();
