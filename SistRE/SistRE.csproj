@@ -619,7 +619,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\PerdidaDocumentos\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -825,6 +824,10 @@
     <Content Include="Views\TipoContrabando\Details.cshtml" />
     <Content Include="Views\TipoContrabando\Edit.cshtml" />
     <Content Include="Views\TipoContrabando\Index.cshtml" />
+    <Content Include="Views\PerdidaDocumentos\Index.cshtml" />
+    <Content Include="Views\PerdidaDocumentos\Create.cshtml" />
+    <Content Include="Views\PerdidaDocumentos\Details.cshtml" />
+    <Content Include="Views\PerdidaDocumentos\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
